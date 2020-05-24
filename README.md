@@ -20,12 +20,12 @@ WHEN I click the button to generate a password
 THEN I am presented with a series of prompts for password criteria
 WHEN prompted for password criteria
 THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
+WHEN prompted for the *length* of the password
 THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
+WHEN prompted for *character types* to include in the password
 THEN I choose lowercase, uppercase, numeric, and/or special characters
 WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
+THEN my input should be validated and at least one character type should be selected (how do i validate this?)
 WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria
 WHEN the password is generated
@@ -47,3 +47,22 @@ You are required to submit the following for review:
 ---
 
 © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+
+Notes:
+  generateBtn.setAttribute("style","background-color: blue;"); //This turns button blue
+  //  1)length between 8-128 characters
+  //  2)Prompt character types to include. Chose a)lower case b)Upper case c)numeric and/or d)special
+  //  3) validate that user selected at least one special type
+
+
+  // fuction 1: prompts user to select character length
+ 
+
+
+
+  // fuction 2: prompts user to select special type
+
+
+
+  //fuction 3: validates that password is 8-128 characters && at least one special type
+

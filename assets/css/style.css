@@ -2,6 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+
 }
 
 html,
@@ -135,3 +136,14 @@ button[disabled] {
     font-size: 0.8rem;
   }
 }
+
+#textInput{
+  color:blue;
+  font-size: 18px;
+  border: none;
+}
+
+form{
+  margin: 20px auto;
+}
+
