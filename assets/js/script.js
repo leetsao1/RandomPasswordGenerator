@@ -9,15 +9,35 @@ var specialList = "@%+!#$^?:.(){}[]~-_`";
 
 var characterArray = [lowerCaseList, upperCaseList, numberList, specialList];
 
+function desiredCharactersArray(){
+    // gets multiple choice selection values
+    var upperCaseButton = document.getElementById("upperCaseTrue").checked;
+    var numbersButton = document.getElementById("numbersTrue").checked;
+    var specialCharactersButton = document.getElementById("specialCharactersTrue").checked;
+    console.log(upperCaseButton, numbersButton, specialCharactersButton);
+  var desiredCharacters = [lowerCaseList]
+
+  if (upperCaseButton){
+    desiredCharacters.push(upperCaseList);
+  }
+  if (numbersButton){
+    desiredCharacters.push(numberList);
+  }
+  if (specialCharactersButton){
+    desiredCharacters.push(specialList);
+  }
+
+  console.log(desiredCharacters);
+}
+
 function writePassword() {
   // gets password length
   var passwordLength = document.getElementById('textInput').value; 
   console.log(passwordLength);
-  // gets multiple choice selection values
-  var upperCaseButton = document.getElementById("upperCaseTrue").checked;
-  var NumbersButton = document.getElementById("numbersTrue").checked;
-  var specialCharactersButton = document.getElementById("specialCharactersTrue").checked;
-  console.log(upperCaseButton, NumbersButton, specialCharactersButton);
+
+
+  // moving the array fuction from here
+  desiredCharactersArray();
 
 
     // for (i = 0; i < passwordLength; i++){
