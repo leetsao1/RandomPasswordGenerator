@@ -9,21 +9,32 @@
   </head>
   <body>
     <div class="wrapper">
-      <header> 
-        <h1 class="headerText"><img class="headerImg" src="https://library.kissclipart.com/20180919/qe/kissclipart-password-clipart-password-policy-computer-security-52766dc009b39cf1.png" width="50px" height="50px"> Password Generator</h1>
+      <header>
+        <h1 class="headerText">
+          <img
+            class="headerImg"
+            src="https://library.kissclipart.com/20180919/qe/kissclipart-password-clipart-password-policy-computer-security-52766dc009b39cf1.png"
+            width="50px"
+            height="50px"
+          />
+          Password Generator
+        </h1>
       </header>
       <div class="card">
         <div class="card-header">
           <h2>Generate a Password</h2>
           <p>
-            Choose a password that is 8 characters or longer (128 max) using at least one
-            capital letter, lower case letter, number or special character.
+            Choose a password that is 8 characters or longer (128 max) using at
+            least one capital letter, lower case letter, number or special
+            character.
           </p>
 
           <!-- Number of Characters - Slider -->
           <form>
             <div class="form-group">
-              <label for="formControlRange">Number of Characters (8-128): </label>
+              <label for="formControlRange"
+                >Number of Characters (8-128):
+              </label>
               <input
                 type="range"
                 class="form-control-range"
@@ -34,50 +45,61 @@
                 value="8"
                 onchange="updateTextInput(this.value);"
               />
-              <input type="text" id="textInput" value="8" style="padding-left: 20px;"/>
+              <input
+                type="text"
+                id="textInput"
+                value="8"
+                style="padding-left: 20px;"
+              />
             </div>
 
-          <!-- multiple choice -->
-          <div class="form-check">
+            <!-- multiple choice -->
             <p>
               I want to make my password stronger. Let's add some...
             </p>
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value="upperCaseCheck"
-              id="defaultCheck1"
-            />
-            <label class="form-check-label" for="defaultCheck1">
-              UpperCase Letters
-            </label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value="numberCheck"
-              id="defaultCheck2"
-            />
-            <label class="form-check-label" for="defaultCheck2">
-              Numbers
-            </label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value="specialChecked"
-              id="defaultCheck3"
-            />
-            <label class="form-check-label" for="defaultCheck3">
-              Special Character
-            </label>
-          </div>
-         </form>
+
+            <!-- UpperCase Option -->
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+
+                id="upperCaseTrue"
+              />
+              <label class="form-check-label" for="defaultCheck1">
+                UpperCase Letters
+              </label>
+            </div>
+
+            <!-- Numbers Option -->
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="numberCheck"
+                id="numbersTrue"
+              />
+              <label class="form-check-label" for="defaultCheck2">
+                Numbers
+              </label>
+            </div>
+
+            <!-- Special Characters Option -->
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="specialChecked"
+                id="specialCharactersTrue"
+              />
+              <label class="form-check-label" for="defaultCheck3">
+                Special Character
+              </label>
+            </div>
+          </form>
         </div>
 
-<!--Button and answer  -->
+        <!--Button and answer  -->
         <div class="card-body">
           <textarea
             readonly

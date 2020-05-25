@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var password = "";
 
 var lowerCaseList = "abcdefghijklmnopqrstuvwxyz";
 var upperCaseList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -8,35 +9,38 @@ var specialList = "@%+!#$^?:.(){}[]~-_`";
 
 var characterArray = [lowerCaseList, upperCaseList, numberList, specialList];
 
-// Write password to the #password input
 function writePassword() {
+  // gets password length
   var passwordLength = document.getElementById('textInput').value; 
   console.log(passwordLength);
-
-//   for (i = 0; i < passwordLength; i++){
-  //**this selects a one of the 4 lists from array characterLIST**
-  var randomNumberList = Math.floor(Math.random() * (characterArray.length));
-  console.log(randomNumberList);
-
-  var randomNumberLetter = Math.floor(Math.random() * (characterArray[randomNumberList].length));
-  console.log(randomNumberLetter);
-
-  var randomLetter = characterArray[randomNumberList].charAt(randomNumberLetter);
-  console.log(randomLetter);
+  // gets multiple choice selection values
+  var upperCaseButton = document.getElementById("upperCaseTrue").checked;
+  var NumbersButton = document.getElementById("numbersTrue").checked;
+  var specialCharactersButton = document.getElementById("specialCharactersTrue").checked;
+  console.log(upperCaseButton, NumbersButton, specialCharactersButton);
 
 
-    // var character = str.charAt(0);
+    // for (i = 0; i < passwordLength; i++){
+      
+    // //**this selects a one of the 4 lists from array characterLIST**
+    
+    //   var randomNumberList = Math.floor(Math.random() * (characterArray.length));
+    //   console.log(randomNumberList);
 
-    //i need the for loop to select from 3 arrays
-    //I need the loop to select a letter at random letter from string. for this you need to know the string leght.
+    //   var randomNumberLetter = Math.floor(Math.random() * (characterArray[randomNumberList].length));
+    //   console.log(randomNumberLetter);
 
+    //   var randomLetter = characterArray[randomNumberList].charAt(randomNumberLetter);
+    //   console.log(randomLetter);
+
+    //   password = password+randomLetter;
+    //   console.log(password);
+    // }
+
+  document.querySelector("textarea").textContent = password;
  }
   
 
-
-
-  // you can create a function named generatePassword that creates the password
-  
   // function generatePassword(){
 
   // }
