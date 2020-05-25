@@ -7,55 +7,52 @@ var upperCaseList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numberList = "0123456789";
 var specialList = "@%+!#$^?:.(){}[]~-_`";
 
-var characterArray = [lowerCaseList, upperCaseList, numberList, specialList];
-
+// This function generates an array from the selected multiple choices
 function desiredCharactersArray(){
-    // gets multiple choice selection values
-    var upperCaseButton = document.getElementById("upperCaseTrue").checked;
-    var numbersButton = document.getElementById("numbersTrue").checked;
-    var specialCharactersButton = document.getElementById("specialCharactersTrue").checked;
-    console.log(upperCaseButton, numbersButton, specialCharactersButton);
+  // gets multiple choice selection values
+  var upperCaseButton = document.getElementById("upperCaseTrue").checked;
+  var numbersButton = document.getElementById("numbersTrue").checked;
+  var specialCharactersButton = document.getElementById("specialCharactersTrue").checked;
+  console.log("Multiple Selection Status: " + upperCaseButton + numbersButton + specialCharactersButton);
+  
   var desiredCharacters = [lowerCaseList]
 
-  if (upperCaseButton){
-    desiredCharacters.push(upperCaseList);
-  }
-  if (numbersButton){
-    desiredCharacters.push(numberList);
-  }
-  if (specialCharactersButton){
-    desiredCharacters.push(specialList);
-  }
+    if (upperCaseButton){
+      desiredCharacters.push(upperCaseList);
+    }
+    if (numbersButton){
+      desiredCharacters.push(numberList);
+    }
+    if (specialCharactersButton){
+      desiredCharacters.push(specialList);
+    }
 
   console.log(desiredCharacters);
+  return desiredCharacters;
+}
+// This fuction randomly selects an array from the desiredCharacters arrays, then randomly selects an index from that same array, then returns the character
+function randomCharacter (characterArray){
+    var characterArray;
+    //Randomly selects an array from characterArray
+    var randomNumberList = Math.floor(Math.random() * (characterArray.length));
+
+    // Randomly selects an idex from the randomly selected array
+    var randomNumberLetter = Math.floor(Math.random() * (characterArray[randomNumberList].length));
+
+    // Gets the character from the random index, at a random array
+    var randomLetter = characterArray[randomNumberList].charAt(randomNumberLetter);
+      return randomLetter;
 }
 
 function writePassword() {
-  // gets password length
-  var passwordLength = document.getElementById('textInput').value; 
-  console.log(passwordLength);
-
-
-  // moving the array fuction from here
-  desiredCharactersArray();
-
-
-    // for (i = 0; i < passwordLength; i++){
-      
-    // //**this selects a one of the 4 lists from array characterLIST**
-    
-    //   var randomNumberList = Math.floor(Math.random() * (characterArray.length));
-    //   console.log(randomNumberList);
-
-    //   var randomNumberLetter = Math.floor(Math.random() * (characterArray[randomNumberList].length));
-    //   console.log(randomNumberLetter);
-
-    //   var randomLetter = characterArray[randomNumberList].charAt(randomNumberLetter);
-    //   console.log(randomLetter);
-
-    //   password = password+randomLetter;
-    //   console.log(password);
-    // }
+  var passwordLength = document.getElementById('textInput').value; //gets password length
+  var characterArray =  desiredCharactersArray(); // assigns new array from selected options
+  
+    for (i = 0; i < passwordLength; i++){
+      randomLetter = randomCharacter(characterArray);
+      password = password+randomLetter;
+      console.log(password);
+      }
 
   document.querySelector("textarea").textContent = password;
  }
@@ -75,6 +72,9 @@ function updateTextInput(val) {
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+// need to add resets
 
 
 
