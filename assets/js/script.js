@@ -30,13 +30,13 @@ function desiredCharactersArray(){
   console.log(desiredCharacters);
   return desiredCharacters;
 }
-// This fuction randomly selects an array from the desiredCharacters arrays, then randomly selects an index from that same array, then returns the character
+// This function randomly selects an array from the desiredCharacters arrays, then randomly selects an index from that same array, then returns the character
 function randomCharacter (characterArray){
     var characterArray;
     //Randomly selects an array from characterArray
     var randomNumberList = Math.floor(Math.random() * (characterArray.length));
 
-    // Randomly selects an idex from the randomly selected array
+    // Randomly selects an index from the randomly selected array
     var randomNumberLetter = Math.floor(Math.random() * (characterArray[randomNumberList].length));
 
     // Gets the character from the random index, at a random array
@@ -56,25 +56,17 @@ function writePassword() {
 
   document.querySelector("textarea").textContent = password;
  }
-  
-
-  // function generatePassword(){
-
-  // }
-  // var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
-  // passwordText.value = password;
-
 
 // This is to update the slider value
 function updateTextInput(val) {
   document.getElementById('textInput').value=val; 
 }
 // Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
 
 
-// need to add resets
+
 
 
 
