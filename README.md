@@ -48,21 +48,17 @@ You are required to submit the following for review:
 
 © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
 
-Notes:
+Developer log:
   generateBtn.setAttribute("style","background-color: blue;"); //This turns button blue
   //  1)length between 8-128 characters
   //  2)Prompt character types to include. Chose a)lower case b)Upper case c)numeric and/or d)special
   //  3) validate that user selected at least one special type
 
+  // function 1: prompts user to select character length
 
-  // fuction 1: prompts user to select character length
- 
-
-
-
-  // fuction 2: prompts user to select special type
+  // function 2: prompts user to select special type
 
 
 
-  //fuction 3: validates that password is 8-128 characters && at least one special type
+  //function 3: validates that password is 8-128 characters && at least one special type
 

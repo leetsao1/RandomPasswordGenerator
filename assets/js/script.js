@@ -1,6 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var password = "";
 
 var lowerCaseList = "abcdefghijklmnopqrstuvwxyz";
 var upperCaseList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -47,7 +46,8 @@ function randomCharacter (characterArray){
 function writePassword() {
   var passwordLength = document.getElementById('textInput').value; //gets password length
   var characterArray =  desiredCharactersArray(); // assigns new array from selected options
-  
+  document.querySelector("textarea").textContent = ""; 
+  var password ="";
     for (i = 0; i < passwordLength; i++){
       randomLetter = randomCharacter(characterArray);
       password = password+randomLetter;
